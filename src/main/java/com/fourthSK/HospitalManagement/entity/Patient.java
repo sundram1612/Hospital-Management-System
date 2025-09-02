@@ -52,12 +52,12 @@ public class Patient {
     private BloodGroupType bloodGroup;
 
 //    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    @OneToOne(cascade = {CascadeType.ALL},orphanRemoval = true)
-    @JoinColumn(name = "patient_insurance_id")      // Owning Side
+    @OneToOne(cascade = {CascadeType.ALL},orphanRemoval = true)   //orphanRemoval=true-----> when child object is removed from the parent, will automatically be deleted from DB too.
+    @JoinColumn(name = "patient_insurance_id")      // Owning Side, it contains foreign key
     private Insurance insurance;
 
-    @OneToMany(mappedBy = "patient", cascade = {CascadeType.REMOVE}, orphanRemoval = true, fetch = FetchType.EAGER)
 //    @ToString.Exclude
+    @OneToMany(mappedBy = "patient", cascade = {CascadeType.REMOVE}, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Appointment> appointments = new ArrayList<>();  //One patient to many appointments so we mentioned here OneToMany Mapping.
 
 }

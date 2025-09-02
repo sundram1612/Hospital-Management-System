@@ -2,7 +2,6 @@ package com.fourthSK.HospitalManagement.service;
 
 import com.fourthSK.HospitalManagement.entity.Patient;
 import com.fourthSK.HospitalManagement.repository.PatientRepository;
-import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +12,7 @@ public class PatientService {
 
     private final PatientRepository patientRepository;
 
-    private final EntityManager entityManager;
+//    private final EntityManager entityManager;
 
     @Transactional
     public Patient getPatientById(Long id) {

@@ -29,7 +29,7 @@ public class Appointment {
     @JoinColumn(name = "patient_id", nullable = false)              // patient is required field and can't be nullable
     private Patient patient;                                        // Many appointment to one patient;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)                      // for performance optimization
     @ToString.Exclude
     @JoinColumn(nullable = false)
     private Doctor doctor;

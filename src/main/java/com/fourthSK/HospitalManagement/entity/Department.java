@@ -26,8 +26,8 @@ public class Department {
     @OneToOne
     private Doctor headDoctor;
 
-    @ManyToMany
-    @JoinTable(
+    @ManyToMany                                                 // a department can have multiple doctors and a doctors can belong to multiple departments
+    @JoinTable(                                                 // Junction Table whenever ManyToMany Mapping is performed.
             name = "my_dpt_doctors",
             joinColumns = @JoinColumn(name = "dpt_id"),
             inverseJoinColumns = @JoinColumn(name = "doctor_id")

@@ -28,9 +28,9 @@ import java.util.Set;
         @Column(nullable = false, unique = true, length = 100)
         private String email;
 
-        @ManyToMany(mappedBy = "doctors")
+        @ManyToMany(mappedBy = "doctors")                           // a doctor can belong to many departments and a department can have multiple doctors.
         private Set<Department> departments = new HashSet<>();
 
-        @OneToMany(mappedBy = "doctor")
+        @OneToMany(mappedBy = "doctor")                            // a doctor can have multiple appointments
         private List<Appointment> appointments = new ArrayList<>();
     }

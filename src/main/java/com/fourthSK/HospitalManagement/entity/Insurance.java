@@ -32,7 +32,7 @@ public class Insurance {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @OneToOne(mappedBy = "insurance")   //Inverse Side
-    private Patient patient;
+    @OneToOne(mappedBy = "insurance")   // Inverse Side/ non-owning side
+    private Patient patient;            // patient is owning side
 
 }
